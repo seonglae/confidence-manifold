@@ -2,11 +2,10 @@
 
 Geometric Structure of Correctness Representations in Language Models
 
-## Key Findings
+![Confidence Manifold](figures/confidence_manifold.png)
+*3D PLS visualization of the confidence manifold. Row 1: instruction-tuned models. Row 2: GPT-2 family (base models).*
 
-When a language model asserts that "the capital of Australia is Sydney," does it *know* this is wrong?
-
-We characterize the geometry of correctness representations across 9 models from 5 architecture families:
+## Overview
 
 | Finding | Details |
 |---------|---------|
@@ -56,22 +55,22 @@ print(f"AUC: {cv_result.mean_auc:.3f} ± {cv_result.std_auc:.3f}")
 
 ```bash
 # Probe experiment: layer sweep, dimension sweep, classifier comparison
-python probe_experiment.py --model gpt2 --samples 1000
+python scripts/probe_experiment.py --model gpt2 --samples 1000
 
 # Geometry experiment: intrinsic dimension, classifier comparison, baselines
-python geometry_experiment.py --model qwen2-7b
+python scripts/geometry_experiment.py --model qwen2-7b
 
 # Cross-dataset transfer: train TruthfulQA → test SciQ, CSQA, FEVER
-python cross_dataset_experiment.py --model qwen2-7b
+python scripts/cross_dataset_experiment.py --model qwen2-7b
 
 # Steering experiment: causal validation via activation intervention
-python steering_experiment.py --model qwen2-7b --layer 20
+python scripts/steering_experiment.py --model qwen2-7b --layer 20
 
 # Paraphrase control: verify detection of correctness vs answer style
-python paraphrase_experiment.py --model qwen2-7b
+python scripts/paraphrase_experiment.py --model qwen2-7b
 
 # Generation geometry: test if properties persist in model-generated outputs
-python generation_experiment.py --model qwen2-7b
+python scripts/generation_experiment.py --model qwen2-7b
 ```
 
 ## Results Summary
