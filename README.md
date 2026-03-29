@@ -110,14 +110,7 @@ python scripts/generation_experiment.py --model qwen2-7b
 
 ## Citation
 
-```bibtex
-@article{cho2026confidence,
-  title={The Confidence Manifold: Geometric Structure of Correctness Representations in Language Models},
-  author={Cho, Seonglae and Wu, Zekun and Da Costa, Kleyton and Koshiyama, Adriano},
-  year={2026},
-  note={Preprint}
-}
-```
+Citation will be available upon publication.
 
 ## License
 
